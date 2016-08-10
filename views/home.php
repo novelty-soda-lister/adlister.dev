@@ -6,7 +6,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome To Adlister</h1>
+                <h1 class="text-center">Drink It Down!</h1>
 
             </div>
 
