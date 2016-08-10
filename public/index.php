@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../bootstrap.php';
+var_dump($request);
 ?>
 <!DOCTYPE html>
 <html>
