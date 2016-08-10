@@ -17,8 +17,8 @@
 					<li class="menuItem"><a href="/sodas">Sodas</a></li>
 					<li class="menuItem"><a href="/create">Create</a></li>
 					<li class="menuItem"><a href="/login">Login</a></li>
-					<li class="menuItem"><a href="/signup"></a>Signup</li>
-					<li class="menuItem"><a href="#home"></a>Logout</li>
+					<li class="menuItem"><a href="/signup">Signup</a></li>
+					<li class="menuItem"><a href="/logout">Logout</a></li>
 				</ul>
 			</div>	   
 		</div>
