@@ -20,6 +20,9 @@ function pageController()
         case '/sodas':
             $main_view = '../views/ads/index.php';
             break;
+        case '/create':
+            $main_view = '../views/ads/create.php';
+            break;
         case '/login':
             $main_view = '../views/users/login.php';
             break;
@@ -27,7 +30,11 @@ function pageController()
             $main_view = '../views/users/signup.php';
             break;
         case '/logout':
-            $main_view = '../views/users/login.php';
+            session_start();
+            session_unset();
+            session_destroy();
+            echo "<script>alert('You have been logged out')</script>";
+            $main_view = '../views/home.php';
             break;
         default:    // displays 404 if route not specified above
             $main_view = '../views/404.php';
