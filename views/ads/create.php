@@ -22,7 +22,7 @@
 	                <?php unset($_SESSION['SUCCESS_MESSAGE']); ?>
 	            <?php endif; ?>
 
-				<form method="POST" action="upload.php" enctype="multipart/form-data" data-validation data-required-message="This field is required">
+				<form method="POST" action="" enctype="multipart/form-data" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
 					    <input type="text" class="form-control" id="name" name="name" placeholder="Product Name" data-required>
@@ -35,7 +35,7 @@
 					</div>
 					<div class="form-group">
 					    <p>Select image to upload:</p>
-					    <input type="file" name="fileToUpload" id="fileToUpload">
+					    <input type="file" class="form-control" name="fileToUpload" id="fileToUpload">
 					</div>
 					<div class="row">
 						<div class="col-sm-6 text-right">
