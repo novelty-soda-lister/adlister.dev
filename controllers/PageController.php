@@ -10,6 +10,7 @@ function pageController()
     $data = [];
 
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    // $data['main_view'] = $main_view;
 
     // switch that will run functions and setup variables dependent on what route was accessed
     switch ($request) {
@@ -21,6 +22,7 @@ function pageController()
             $main_view = '../views/ads/index.php';
             break;
         case '/create':
+
             $main_view = '../views/ads/create.php';
             break;
         case '/login':
@@ -28,6 +30,9 @@ function pageController()
             break;
         case '/signup':
             $main_view = '../views/users/signup.php';
+            if ($_POST) {
+                processSignIn();
+            }
             break;
         case '/logout':
             session_start();
@@ -41,7 +46,8 @@ function pageController()
             break;
     }
 
-    $data['main_view'] = $main_view;
+
+
 
     
     return [
