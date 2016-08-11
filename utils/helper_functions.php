@@ -61,25 +61,6 @@ function Logout(){
     exit();
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function processUserUpload(){
     $image_url = saveUploadedImage('fileToUpload');
     if ($image_url) {
