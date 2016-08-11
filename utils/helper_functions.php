@@ -1,7 +1,7 @@
 <?php
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
-
+require_once 'Input.php';
 
 // takes image from form submission and moves it into the uploads directory
 function saveUploadedImage($input_name)
@@ -25,4 +25,20 @@ function saveUploadedImage($input_name)
 
     }
     return null;
+}
+function processSignin(){
+    $user = new User;
+    $user->name = Input::get('name');
+    $user->email = Input::get('email');
+    $user->username = Input::get('username'); 
+    $user->password = Input::get('password');
+    $user->save();
+    // if(Auth::attempt(Input::get('username'), Input::get('password'))){
+    //     header('Location: ');
+    //     die();
+    // } else{
+    //     $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
+    //     header('Location: ');
+    //     die();
+    // }
 }
