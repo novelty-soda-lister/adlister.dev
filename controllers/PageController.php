@@ -22,6 +22,10 @@ function pageController()
             break;
         case '/create':
             $main_view = '../views/ads/create.php';
+            if ($_POST) 
+            {
+                saveUploadedImage('fileToUpload');
+            }
             break;
         case '/login':
             $main_view = '../views/users/login.php';
