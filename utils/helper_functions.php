@@ -2,7 +2,6 @@
 require_once 'Input.php';
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
-require_once 'Input.php';
 
 // takes image from form submission and moves it into the uploads directory
 function saveUploadedImage($fileToUpload)
@@ -21,9 +20,8 @@ function saveUploadedImage($fileToUpload)
             $tempFile = $_FILES[$fileToUpload]['tmp_name'];
                 $image_ext = pathinfo($_FILES[$fileToUpload]['name'], PATHINFO_EXTENSION);
                 $image_url = __DIR__ . '/../public/img/uploads/' . hash_file('md5', $_FILES[$fileToUpload]['tmp_name']) . '.' . $image_ext;
-                var_dump($tempFile, $image_url);
                 $r = move_uploaded_file($tempFile, $image_url);
-                var_dump($r);
+                var_dump($_FILES);
                 return $image_url;
         }
 
@@ -45,4 +43,20 @@ function processSignin(){
     //     header('Location: ');
     //     die();
     // }
+}
+function processUserUpload(){
+    $image_url = saveUploadedImage('fileToUpload');
+    if ($image_url) {
+        $drinks = new Drinks;
+        $drinks->name = Input::get('name');
+        $drinks->price = Input::get('price');
+        $drinks->description = Input::get('description'); 
+        $drinks->image_url = pathinfo($image_url, PATHINFO_BASENAME);
+        $drinks->save();
+    }
+}
+
+function getAllDrinksForPage() {
+    $drinks = Drinks::pagination();
+    return $drinks;
 }
