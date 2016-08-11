@@ -25,7 +25,7 @@ class Auth
 		if ($user == null)
 		{
 
-			$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+			$_SESSION['ERROR_MESSAGE'] = 'Login information was not right';
 			return false;
 		}
 
@@ -40,7 +40,7 @@ class Auth
 			return true;
 		}
 
-		$_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect';
+		$_SESSION['ERROR_MESSAGE'] = 'Login information was fuck';
 		return false;
 	}
 
