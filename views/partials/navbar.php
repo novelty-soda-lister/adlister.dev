@@ -9,7 +9,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Novely Sodas MF'er</a>
+				<a class="navbar-brand" href="/">Novelty Sodas</a>
 			</div>
 	<!--CollapseNavBar-->
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
