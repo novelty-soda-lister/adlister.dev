@@ -46,3 +46,37 @@ function processSignin(){
     //     die();
     // }
 }
+//info submitted through Login form
+function loginIfNotEmpty(){
+    if($_POST){
+        if(Auth::attempt(Input::get('username'), Input::get('password'))){
+            header('Location: ../views/home.php');//redirect to user home page
+            exit();
+        }
+    }
+}
+
+function Logout(){
+    Auth::logout();
+    header('Location: ../views/home.php');//where to redirect after loguout?
+    exit();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
