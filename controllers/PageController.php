@@ -8,7 +8,6 @@ function pageController()
 
     // defines array to be returned and extracted for view
     $data = [];
-
     $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     // $data['main_view'] = $main_view;
 
@@ -17,6 +16,7 @@ function pageController()
 
         case '/':
             $main_view = '../views/home.php';
+            $data['drinks'] = getAllDrinksForPage();
             break;
         case '/sodas':
             $main_view = '../views/ads/index.php';
@@ -26,7 +26,7 @@ function pageController()
             $main_view = '../views/ads/create.php';
             if ($_POST) 
             {
-                saveUploadedImage('fileToUpload');
+                processUserUpload();
             }
             break;
         case '/login':
@@ -52,13 +52,11 @@ function pageController()
 
 
 
-
+    $data['title'] = 'Soda Lister';
+    $data['main_view'] = $main_view;
+    $data['request'] = $request;
     
-    return [
-        'title' => 'Soda Lister',
-        'main_view' => $main_view,
-        'request' => $request
-    ];
+    return $data;
 }
 
 extract(pageController());

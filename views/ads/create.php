@@ -43,6 +43,14 @@
 						</div>
 					</div>
 				</form>
+				<?php foreach ($drinks as $drink) { ?>
+                <tr>
+                    <td><?= $drinks['name'] ?></td> 
+                    <td><?= $drinks['price'] ?></td>
+                    <td><?= $drinks['description'] ?></td>
+                    <td><?= $drinks['image_url'] ?></td>
+                </tr>
+            <?php } ?>
 			</div>
 
 		</div>
