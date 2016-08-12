@@ -48,12 +48,11 @@ function processSignin(){
 
 //info submitted through Login form
 function loginIfNotEmpty(){
-    if($_POST){
-        if(Auth::attempt(Input::get('username'), Input::get('password'))){
-            header('Location: ../views/home.php');//redirect to user home page
-            exit();
-        }
+    if(!empty($_POST) && (Auth::attempt(Input::get('username'), Input::get('password')))){
+        header('Location: ../views/home.php');//redirect to user home page
+        exit();
     }
+    
 }
 
 function Logout(){

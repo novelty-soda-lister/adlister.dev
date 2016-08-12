@@ -26,7 +26,7 @@
 				<form method="POST" action="" data-validation data-required-message="This field is required">
 
 					<div class="form-group">
-					    <input type="text" class="form-control" id="email_user" name="email_user" placeholder="Email or Username" data-required>
+					    <input type="text" class="form-control" id="username" name="username" placeholder="Email or Username" data-required>
 					</div>
 					<div class="form-group">
 					    <input type="password" class="form-control" id="password" name="password" placeholder="Password" data-required>
