@@ -7,7 +7,7 @@ body {
 	padding: 100px;
 	color: forestgreen;
 	background-color: darkgrey;
-}
+	font-family: 'Indie Flower', cursive;
 a {
 	color: forestgreen;
 }
@@ -15,5 +15,9 @@ a {
 	width: 100%;
 	height: 20px;
 }
-
+.images {
+	position: relative;
+	width: 200px;
+	height: 250px;
+}
 
