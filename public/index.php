@@ -11,7 +11,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <body>
 	<a id="top"></a>
     <?php require '../views/partials/navbar.php'; ?>
-
+    <?php var_dump(Auth::user(), $_SESSION); ?>
     <?php require $main_view; ?>
 	<!-- Footer -->
 <div class="container footer">    

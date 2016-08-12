@@ -42,7 +42,7 @@ class Drinks extends Model
         $page = Input::get('page', 1);
         $limit = 5;
         $offset = ($page * $limit) - $limit;
-        $sql= "SELECT * FROM drinks WHERE id = 23 OR id = 24 OR id = 25 LIMIT :count OFFSET :shift";
+        $sql= "SELECT * FROM drinks WHERE id = 1 OR id = 2 OR id = 3 LIMIT :count OFFSET :shift";
         $stmt = self::$dbc->prepare($sql);
         $stmt->bindValue(':count', $limit, PDO::PARAM_INT);
         $stmt->bindValue(':shift', $offset, PDO::PARAM_INT);
@@ -60,16 +60,7 @@ class Drinks extends Model
 
         return $instance;
     }
-
-    public static function getAllDrinks()
-    {
-        self::dbConnect();
-        $page = Input::get('page', 1);
-        $limit = 5;
-        $offset = ($page * $limit) - $limit;
-        $sql= "SELECT * FROM drinks LIMIT :count OFFSET :shift";
-        $stmt = self::$dbc->prepare($sql);
-    }
+    
      public static function findDrinksByUserId($id)
     {
 

@@ -21,14 +21,13 @@
 
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
+            <div class="col-md-4">
                 <?php foreach ($featured->attributes as $key => $drink) { ?>
-                    <div class="col-md-4">
-                        <h4 class="text-center"><?= $drink['name'] ?></h4>
-                        <p><?= $drink['price'] ?></p>
-                        <p><?= $drink['description'] ?><p>
-                    <img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
-                <?php } ?>                        
-                    </div>
+                        <p class-"text-center"><?= $drink['name'] ?></p>
+                        <p class-"text-center"><?= $drink['price'] ?></p>
+                        <p class-"text-center"><?= $drink['description'] ?></p>
+                        <img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
+                    <?php } ?>
             </div>
             
     </section>

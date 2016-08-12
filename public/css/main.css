@@ -8,6 +8,7 @@ body {
 	color: forestgreen;
 	background-color: darkgrey;
 	font-family: 'Indie Flower', cursive;
+}
 a {
 	color: forestgreen;
 }
@@ -19,6 +20,5 @@ img {
 	position: static;
 	width: 200px;
 	height: 250px;
-	border: 1px solid red;
 }
 
