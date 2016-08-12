@@ -85,16 +85,15 @@ class Drinks extends Model
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         // The following code will set the attributes on the calling object based on the result variable's contents
-        $drinks = [];
-        foreach ($results as $drink) {
+        $instance = null;
+        if($results) {
             
                 $instance = new static;
-                $instance->attributes = $drink;
-            $drinks[] = $instance;
+                $instance->attributes = $results;
         }
         
 
-        return $drinks;
+        return $instance;
     }
 
 
