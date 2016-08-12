@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
     <section id="welcome">
 
@@ -6,7 +6,7 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Drink It Down!</h1>
+                <h1 class="text-center">Welcome!</h1>
 
             </div>
 
@@ -20,18 +20,17 @@
 
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
-            <tbody>
-                <?php foreach ($drinks->attributes as $key => $drink) { ?>
-                    <tr>
-                        <div class="col-cs-4"><td><?= $drink['name'] ?></td></div>
-                        <td><?= $drink['price'] ?></td>
-                        <td><?= $drink['description'] ?></td>
-                        <td><?= $drink['image_url'] ?></td>
-                    </tr>
-                <?php } ?>
-            </tbody> 
-        </div>
-
+                    <?php foreach ($drinks->attributes as $key => $drink) { ?>
+                        <div>
+                            <?= $drink['name'] ?>
+                            <?= $drink['price'] ?>
+                            <?= $drink['description'] ?>
+                        <img src="<?= $drink['image_url'] ?>" alt="Img"></img> 
+                    <?php } ?>
+                    <?php var_dump($drink['image_url']) ?>
+                        </div>
+            </div>
+            
     </section>
 
 </div>
