@@ -38,7 +38,7 @@ function pageController()
             //var_dump($data['user']);
             $main_view= '../views/users/account.php';
             checkLogIn();
-            $data['user'] = User::findByUsernameOrEmail(Input::get('username'));
+            $data['user'] = Auth::user(); var_dump(Auth::user());
             $data['drinks'] = Drinks::findDrinksByUserId(Input::get('id'));//drinks for users
             break;
         case '/signup':
