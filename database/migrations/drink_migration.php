@@ -12,6 +12,7 @@ $drinks = "CREATE TABLE drinks(
     price FLOAT UNSIGNED NOT NULL,
     description TEXT NOT NULL,
     image_url VARCHAR(255) NOT NULL DEFAULT 'http://placehold.it/200x250',
+    user_id INT UNSIGNED NOT NULL,
     PRIMARY KEY (id)
 )";
 

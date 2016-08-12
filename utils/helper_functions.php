@@ -1,5 +1,6 @@
 <?php
 require_once 'Input.php';
+require_once '../models/Model.php';
 // List of helper functions used throughout the application.
 // Primarily used within the PageController function.
 
@@ -39,6 +40,7 @@ function processSignin(){
 
 //info submitted through Login form
 function loginIfNotEmpty(){
+
     if(!empty($_POST) && (Auth::attempt(Input::get('username'), Input::get('password')))){
         header('Location: /home.php');//redirect to user home page
         exit();
@@ -51,6 +53,22 @@ function loginIfNotEmpty(){
         header('Location: /login.php');
         die();
     }
+
+    if(!empty($_POST)) {
+        if  (Auth::attempt(Input::get('username'), Input::get('password'))) {
+            header('Location: /account');//redirect to user home page
+            exit();
+        } else {
+            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
+            //header('Location: ');
+            //die();
+        }
+    }
+    if (Auth::check()) {
+        header('Location: /account');
+        die();
+    } 
+
     
 }
 
@@ -76,8 +94,26 @@ function getAllDrinksForPage() {
     $drinks = Drinks::pagination();
     return $drinks;
 }
+
 function getFeaturedDrinks() {
     $featured = Drinks::featured();
     return $featured;
 }
+
+function checkLogIn(){
+    
+     if (Auth::check()) {
+        header('Location: /account');
+        die();
+    } 
+}
+
+function getAccount() {
+    $users = User::findByUsernameOrEmail($username);
+    return $users;
+}
+
+
+
+
 
