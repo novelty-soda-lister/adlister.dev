@@ -75,7 +75,7 @@ class Drinks extends Model
 
         self::dbConnect();
 
-        $query = 'SELECT * FROM ' . self::$table . ' WHERE id = :id'; //WHERE user_id = drinks:id
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE user_id = :id'; //WHERE user_id = drinks:id
 
         $stmt = self::$dbc->prepare($query);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
@@ -97,6 +97,7 @@ class Drinks extends Model
 
         return $instance;
     }
+
 
 
 }
