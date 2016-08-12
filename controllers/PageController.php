@@ -16,10 +16,11 @@ function pageController()
 
         case '/':
             $main_view = '../views/home.php';
-            $data['drinks'] = getAllDrinksForPage();
+            $data['featured'] = getFeaturedDrinks();
             break;
         case '/sodas':
             $main_view = '../views/ads/index.php';
+            $data['drinks'] = getAllDrinksForPage();
             break;
         case '/create':
 

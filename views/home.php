@@ -6,7 +6,8 @@
 
             <div class="col-xs-12">
 
-                <h1 class="text-center">Welcome!</h1>
+                <h1 class="text-center">Welcome to SodaLister</h1>
+                <h3 class="text-center">Drinkt it Down!</h3>
 
             </div>
 
@@ -20,15 +21,14 @@
 
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
-                    <?php foreach ($drinks->attributes as $key => $drink) { ?>
-                        <div>
-                            <?= $drink['name'] ?>
-                            <?= $drink['price'] ?>
-                            <?= $drink['description'] ?>
-                        <img src="<?= $drink['image_url'] ?>" alt="Img"></img> 
-                    <?php } ?>
-                    <?php var_dump($drink['image_url']) ?>
-                        </div>
+                <?php foreach ($featured->attributes as $key => $drink) { ?>
+                    <div class="container-fluid col-lg-12">
+                        <?= $drink['name'] ?>
+                        <?= $drink['price'] ?>
+                        <?= $drink['description'] ?>
+                    <img class="images" src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
+                <?php } ?>                        
+                    </div>
             </div>
             
     </section>

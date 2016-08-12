@@ -22,7 +22,6 @@ function saveUploadedImage($fileToUpload)
                 $image_ext = pathinfo($_FILES[$fileToUpload]['name'], PATHINFO_EXTENSION);
                 $image_url = __DIR__ . '/../public/img/uploads' . $tempFile . '.' . $image_ext;
                 $r = move_uploaded_file($tempFile, $image_url);
-                var_dump($_FILES);
                 return $image_url;
                 
         }
@@ -41,6 +40,20 @@ function processSignin(){
 
 //info submitted through Login form
 function loginIfNotEmpty(){
+
+    if(!empty($_POST) && (Auth::attempt(Input::get('username'), Input::get('password')))){
+        header('Location: /home.php');//redirect to user home page
+        exit();
+    }
+    if(Auth::attempt(Input::get('username'), Input::get('password'))){
+        header('Location: /acount.php');
+        die();
+    } else{
+        $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
+        header('Location: /login.php');
+        die();
+    }
+
     if(!empty($_POST)) {
         if  (Auth::attempt(Input::get('username'), Input::get('password'))) {
             header('Location: /account');//redirect to user home page
@@ -55,6 +68,7 @@ function loginIfNotEmpty(){
         header('Location: /account');
         die();
     } 
+
     
 }
 
@@ -80,6 +94,12 @@ function getAllDrinksForPage() {
     $drinks = Drinks::pagination();
     return $drinks;
 }
+
+function getFeaturedDrinks() {
+    $featured = Drinks::featured();
+    return $featured;
+}
+
 function checkLogIn(){
     
      if (Auth::check()) {
@@ -92,6 +112,7 @@ function getAccount() {
     $users = User::findByUsernameOrEmail($username);
     return $users;
 }
+
 
 
 

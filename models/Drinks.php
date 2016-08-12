@@ -36,6 +36,30 @@ class Drinks extends Model
 
         return $instance;
     }
+    public static function featured()
+    {
+        self::dbConnect();
+        $page = Input::get('page', 1);
+        $limit = 5;
+        $offset = ($page * $limit) - $limit;
+        $sql= "SELECT * FROM drinks WHERE id = 23 OR id = 24 OR id = 25 LIMIT :count OFFSET :shift";
+        $stmt = self::$dbc->prepare($sql);
+        $stmt->bindValue(':count', $limit, PDO::PARAM_INT);
+        $stmt->bindValue(':shift', $offset, PDO::PARAM_INT);
+        $stmt->execute();
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $instance = null;
+
+        if ( $results )
+        {
+
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
+    }
 
     public static function getAllDrinks()
     {

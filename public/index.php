@@ -6,6 +6,7 @@ require_once __DIR__ . '/../bootstrap.php';
 <head>
     <?php require '../views/partials/head.php'; ?>
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
 <body>
 	<a id="top"></a>
