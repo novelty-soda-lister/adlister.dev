@@ -67,6 +67,7 @@ function processUserUpload(){
         $drinks->price = Input::get('price');
         $drinks->description = Input::get('description'); 
         $drinks->image_url = pathinfo($image_url, PATHINFO_BASENAME);
+        $drinks->user_id = Auth::id();
         $drinks->save();
     }
 }
@@ -83,8 +84,8 @@ function getFeaturedDrinks() {
 
 function checkLogIn(){
     
-     if (Auth::check()) {
-        header('Location: /account');
+     if (!Auth::check()) {
+        header('Location: /login');
         die();
     } 
 }
