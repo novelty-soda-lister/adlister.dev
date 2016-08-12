@@ -1,9 +1,9 @@
 <!--partial view for navbar-->
 	<!-- NavBar-->
-	<nav class="navbar-default" role="navigation">
+	<nav class="navbar navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<button type="button" class="navbar-toggle">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -12,7 +12,7 @@
 				<a class="navbar-brand" href="/">Novelty Sodas</a>
 			</div>
 	<!--CollapseNavBar-->
-			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+			<div class="navbar-right">
 				<ul class="nav navbar-nav">
 					<li class="menuItem"><a href="/sodas">Sodas</a></li>
 					<li class="menuItem"><a href="/create">Create</a></li>

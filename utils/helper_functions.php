@@ -19,10 +19,11 @@ function saveUploadedImage($fileToUpload)
 
             $tempFile = $_FILES[$fileToUpload]['tmp_name'];
                 $image_ext = pathinfo($_FILES[$fileToUpload]['name'], PATHINFO_EXTENSION);
-                $image_url = __DIR__ . '/../public/img/uploads/' . hash_file('md5', $_FILES[$fileToUpload]['tmp_name']) . '.' . $image_ext;
+                $image_url = __DIR__ . '/../public/img/uploads' . $tempFile . '.' . $image_ext;
                 $r = move_uploaded_file($tempFile, $image_url);
                 var_dump($_FILES);
                 return $image_url;
+                
         }
 
     }
