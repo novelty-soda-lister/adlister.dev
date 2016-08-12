@@ -41,34 +41,15 @@ function processSignin(){
 //info submitted through Login form
 function loginIfNotEmpty(){
 
-    if(!empty($_POST) && (Auth::attempt(Input::get('username'), Input::get('password')))){
-        header('Location: /home.php');//redirect to user home page
-        exit();
-    }
-    if(Auth::attempt(Input::get('username'), Input::get('password'))){
-        header('Location: /acount.php');
-        die();
-    } else{
-        $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
-        header('Location: /login.php');
-        die();
-    }
-
-    if(!empty($_POST)) {
-        if  (Auth::attempt(Input::get('username'), Input::get('password'))) {
-            header('Location: /account');//redirect to user home page
-            exit();
-        } else {
-            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
-            //header('Location: ');
-            //die();
-        }
-    }
     if (Auth::check()) {
         header('Location: /account');
         die();
-    } 
-
+    } else if(!empty($_POST) && (Auth::attempt(Input::get('username'), Input::get('password')))){
+        header('Location: /account');//redirect to user home page
+        exit();
+    } else if (!empty($_POST)) {
+            $_SESSION['ERROR_MESSAGE'] = 'Login information was incorrect, please try again';
+    }
     
 }
 
