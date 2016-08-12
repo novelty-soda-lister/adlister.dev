@@ -38,8 +38,10 @@ function pageController()
             //var_dump($data['user']);
             $main_view= '../views/users/account.php';
             checkLogIn();
-            $data['user'] = Auth::user(); 
-            $data['drinks'] = Drinks::findDrinksByUserId(Input::get('id'));
+
+            $data['user'] = Auth::user(); var_dump(Auth::user());
+            $data['drinks'] = Drinks::findDrinksByUserId(Auth::id());//drinks for users
+
             break;
         case '/signup':
             $main_view = '../views/users/signup.php';
