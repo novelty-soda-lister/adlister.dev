@@ -94,6 +94,7 @@ function loginIfNotEmpty(){
 function Logout(){
     Auth::logout();
     header('Location: /sodas');//where to redirect after loguout?
+
     exit();
 }
 

@@ -52,13 +52,16 @@
 			<img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" class="center-block">
 
 			<?php endforeach; ?>
+
 		</div>
-
-
 		<!-- Maybe see if we can requir the create file and allow user to create from account page -->
 		<?php if ($user->id == Auth::id()) : ?>
 		<div class="row text-center">
+
+			<a href="/create">Create Post</a>
+
 			<a href="/create" class="btn-primary">Create Post</a>
+
 		</div>
 		<?php endif; ?>
 	</section>

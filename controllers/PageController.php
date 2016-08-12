@@ -38,8 +38,10 @@ function pageController()
             //var_dump($data['user']);
             $main_view= '../views/users/account.php';
             checkLogIn();
+
             $data['user'] = Auth::user(); var_dump(Auth::user());
             $data['drinks'] = Drinks::findDrinksByUserId(Auth::id());//drinks for users
+
             break;
         case '/signup':
             $main_view = '../views/users/signup.php';
@@ -51,11 +53,6 @@ function pageController()
         //     $main_view = '../views/users/account.php';
         //     break;
         case '/logout':
-            // session_start();
-            // session_unset();
-            // session_destroy();
-            // echo "<script>alert('You have been logged out')</script>";
-            // $main_view = '../views/home.php';
             Logout();
             break;
         default:    // displays 404 if route not specified above
