@@ -22,7 +22,7 @@
             <p class="">Email - <?= $user->email ?></p>
 
             <!--Need to see if new user object is Authorized (maybe if using Auth?) end if statement -->
-            <?php if($user->id = Auth::id()) : ?>
+            <?php if($user->id == Auth::id()) : ?>
             <div class="col-sm-6 text-center">
             <a href="views/users/account/edit?id=<?= $user->id; ?>" class="btn-primary">Edit Profile</a>
         	</div>
@@ -31,7 +31,7 @@
 		</div>
 
 	</section>
-
+<!-- tj was here -->
 	<section id="yourSodas">
 		<div class="row">
 			<div class="col-md-12">
@@ -40,23 +40,23 @@
 		</div>
 		<div class="row">
 			<!--Foreach through user's items don't forget columns(keys) for sodas -->
-			<?php foreach ($drinks->attributes as $key => $drink) : ?> 
+			<?php foreach ($drinks as $drink) : ?> 
 		<div class="col-md-4">
 			<!-- echo Soda name -->
-			<h3 class="text-center"><?= $drink['name']; ?></h3>
+			<h3 class="text-center"><?= $drink->name; ?></h3>
 			<!-- echo pric -->
 			<p class="text-center"><?= $drink['price']; ?></p>
 			<!-- echo description -->
 			<p class="text-center"><?= $drink['description']; ?></p>
 			<!-- echo image(if possible) -->
-			<img src="<?= $drink['image_url']; ?>" class="center-block">
+			<img src="<?= $drink->image_url ?>" class="center-block">
 
 			<?php endforeach; ?>
 		</div>
 
 
 		<!-- Maybe see if we can requir the create file and allow user to create from account page -->
-		<?php if ($user->id = Auth::id()) : ?>
+		<?php if ($user->id == Auth::id()) : ?>
 		<div class="row text-center">
 			<a href="views/ads/create" class="btn-primary">Create Post</a>
 		</div>
