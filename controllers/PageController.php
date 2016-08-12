@@ -31,7 +31,14 @@ function pageController()
             break;
         case '/login':
             $main_view = '../views/users/login.php';
-                loginIfNotEmpty();
+            loginIfNotEmpty();
+            break;
+        case '/account':
+            //var_dump($data['user']);
+            $main_view= '../views/users/account.php';
+            checkLogIn();
+            $data['user'] = User::findByUsernameOrEmail(Input::get('username'));
+            $data['drinks'] = Drinks::findDrinksByUserId(Input::get('id'));//drinks for users
             break;
         case '/signup':
             $main_view = '../views/users/signup.php';
@@ -39,6 +46,9 @@ function pageController()
                 processSignIn();
             }
             break;
+        // case 'views/users/account.php';
+        //     $main_view = '../views/users/account.php';
+        //     break;
         case '/logout':
             // session_start();
             // session_unset();

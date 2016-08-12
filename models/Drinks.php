@@ -37,6 +37,44 @@ class Drinks extends Model
         return $instance;
     }
 
+    public static function getAllDrinks()
+    {
+        self::dbConnect();
+        $page = Input::get('page', 1);
+        $limit = 5;
+        $offset = ($page * $limit) - $limit;
+        $sql= "SELECT * FROM drinks LIMIT :count OFFSET :shift";
+        $stmt = self::$dbc->prepare($sql);
+    }
+     public static function findDrinksByUserId($id)
+    {
+
+        self::dbConnect();
+
+        $query = 'SELECT * FROM ' . self::$table . ' WHERE id = :id'; //WHERE user_id = drinks:id
+
+        $stmt = self::$dbc->prepare($query);
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
+
+        //Store the resultset in a variable named $result
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // The following code will set the attributes on the calling object based on the result variable's contents
+
+        $instance = null;
+
+        if ( $results )
+        {
+
+            $instance = new static;
+            $instance->attributes = $results;
+        }
+
+        return $instance;
+    }
+
+
 }
 
 ?>
