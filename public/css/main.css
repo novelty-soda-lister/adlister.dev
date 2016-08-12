@@ -15,9 +15,10 @@ a {
 	width: 100%;
 	height: 20px;
 }
-.images {
-	position: relative;
+img {
+	position: static;
 	width: 200px;
 	height: 250px;
+	border: 1px solid red;
 }
 

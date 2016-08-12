@@ -74,7 +74,7 @@ function loginIfNotEmpty(){
 
 function Logout(){
     Auth::logout();
-    header('Location: ../views/home.php');//where to redirect after loguout?
+    header('Location: /../views/home.php');//where to redirect after loguout?
     exit();
 }
 

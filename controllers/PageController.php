@@ -51,11 +51,6 @@ function pageController()
         //     $main_view = '../views/users/account.php';
         //     break;
         case '/logout':
-            // session_start();
-            // session_unset();
-            // session_destroy();
-            // echo "<script>alert('You have been logged out')</script>";
-            // $main_view = '../views/home.php';
             Logout();
             break;
         default:    // displays 404 if route not specified above

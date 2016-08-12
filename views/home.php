@@ -22,11 +22,11 @@
             <h3 class="section-title">Featured Items</h3>
             <!-- Placeholder for featured items.-->
                 <?php foreach ($featured->attributes as $key => $drink) { ?>
-                    <div class="container-fluid col-lg-12">
-                        <?= $drink['name'] ?>
-                        <?= $drink['price'] ?>
-                        <?= $drink['description'] ?>
-                    <img class="images" src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
+                    <div class="col-md-4">
+                        <h4 class="text-center"><?= $drink['name'] ?></h4>
+                        <p><?= $drink['price'] ?></p>
+                        <p><?= $drink['description'] ?><p>
+                    <img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
                 <?php } ?>                        
                     </div>
             </div>
