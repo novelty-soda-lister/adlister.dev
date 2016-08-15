@@ -29,6 +29,7 @@ function saveUploadedImage($fileToUpload)
     }
     return null;
 }
+
 // function saveUploadedImage($input_name)
 // {
 //     $valid = true;
@@ -67,6 +68,7 @@ function saveUploadedImage($fileToUpload)
 //         return null;
 //     }
 // }
+
 function processSignin(){
     $user = new User;
     $user->name = Input::get('name');

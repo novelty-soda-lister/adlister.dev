@@ -11,15 +11,22 @@ require_once __DIR__ . '/../bootstrap.php';
 <body>
 	<a id="top"></a>
     <?php require '../views/partials/navbar.php'; ?>
-    <?php var_dump(Auth::user(), $_SESSION); ?>
+ <div class="bar"></div>
     <?php require $main_view; ?>
 	<!-- Footer -->
-<div class="container footer">    
-	<div class="row-fluid">
+<div id="wrap" class="container footer">    
+	<div id="main" class="container clear-top">
 			<div class="span12">
 				<div class="span2">
 						<span><a href="#">Contact & support</a></span>
-						<span class="pull-right"><a href="#top">Back to Top</a></span>
+						<span class="pull-right">
+							<a href="#top">Back to Top</a>
+						</span>
+						<?php if ($_SESSION) : ?>
+							<div class="row text-center">
+								<a href="/create">Create Post</a>
+							</div>
+						<?php endif; ?>
 				</div>
 				<div class="span4">
 					<p class="muted pull-right">© 2016 Soda Lister. All rights reserved</p>
