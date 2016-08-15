@@ -35,6 +35,7 @@ require_once __DIR__ . '/../bootstrap.php';
 		</div>
 	</div>
     <?php require '../views/partials/common_js.php'; ?>
+
 </body>
 </html>
 

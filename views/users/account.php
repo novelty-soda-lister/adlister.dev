@@ -41,7 +41,7 @@
 		<div class="row">
 			<!--Foreach through user's items don't forget columns(keys) for sodas -->
 			<?php foreach ($drinks->attributes as $drink) : ?> 
-				<div class="col-md-4">
+				<div class="col-md-4 img-box">
 					<!-- echo Soda name -->
 					<h3 class="text-center post-item"><?= $drink['name']; ?></h3>
 					<!-- echo pric -->
