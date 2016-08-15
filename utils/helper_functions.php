@@ -5,30 +5,30 @@ require_once '../models/Model.php';
 // Primarily used within the PageController function.
 
 // takes image from form submission and moves it into the uploads directory
-// function saveUploadedImage($fileToUpload)
-// {
+function saveUploadedImage($fileToUpload)
+{
 
-//     $valid = true;
+    $valid = true;
 
-//     // checks if $input_name is in the files super global
-//     if(isset($_FILES[$fileToUpload]) && $_FILES[$fileToUpload]['name'])
-//     {
+    // checks if $input_name is in the files super global
+    if(isset($_FILES[$fileToUpload]) && $_FILES[$fileToUpload]['name'])
+    {
 
-//         // checks if there are any errors on the upload from the submission
-//         if(!$_FILES[$fileToUpload]['error'])
-//         {
+        // checks if there are any errors on the upload from the submission
+        if(!$_FILES[$fileToUpload]['error'])
+        {
 
-//             $tempFile = $_FILES[$fileToUpload]['tmp_name'];
-//                 $image_ext = pathinfo($_FILES[$fileToUpload]['name'], PATHINFO_EXTENSION);
-//                 $image_url = __DIR__ . '/../public/img/uploads' . $tempFile . '.' . $image_ext;
-//                 $r = move_uploaded_file($tempFile, $image_url);
-//                 return $image_url;
+            $tempFile = $_FILES[$fileToUpload]['tmp_name'];
+                $image_ext = pathinfo($_FILES[$fileToUpload]['name'], PATHINFO_EXTENSION);
+                $image_url = __DIR__ . '/../public/img/uploads' . $tempFile . '.' . $image_ext;
+                $r = move_uploaded_file($tempFile, $image_url);
+                return $image_url;
                 
-//         }
+        }
 
-//     }
-//     return null;
-// }
+    }
+    return null;
+}
 // function saveUploadedImage($input_name)
 // {
 //     $valid = true;
