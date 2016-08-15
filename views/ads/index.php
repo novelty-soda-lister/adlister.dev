@@ -1,10 +1,10 @@
 <!--Page for an index of advertisements-->
 <h1>All Posts</h1>
-    	<div class="col-md-4">
-                <?php foreach ($drinks->attributes as $key => $drink) { ?>
-                        <p class-"text-center"><?= $drink['name'] ?></p>
-                        <p class-"text-center"><?= $drink['price'] ?></p>
-                        <p class-"text-center"><?= $drink['description'] ?></p>
-                        <img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
-                    <?php } ?>
-            </div>
+    <?php foreach ($drinks->attributes as $key => $drink) { ?>
+		<div class="col-md-4">
+            <h3 class-"text-center post-item"><?= $drink['name'] ?></h3>
+            <p class-"text-center post-item"><?= $drink['price'] ?></p>
+            <p class-"text-center post-item"><?= $drink['description'] ?></p>
+            <img src="/img/uploads/tmp/<?= $drink['image_url'] ?>" alt="Img"></img> 
+        </div>
+    <?php } ?>
