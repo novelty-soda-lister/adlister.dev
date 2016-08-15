@@ -41,6 +41,10 @@ function pageController()
             $data['user'] = Auth::user();
             $data['drinks'] = Drinks::findDrinksByUserId(Auth::id());//drinks for users
             break;
+        case '/contact':
+            $main_view = '../views/users/contact.php';
+            storeContactInfo();
+            break;
         case '/signup':
             $main_view = '../views/users/signup.php';
             if ($_POST) {

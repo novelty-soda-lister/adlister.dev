@@ -18,7 +18,7 @@ require_once __DIR__ . '/../bootstrap.php';
 	<div id="main" class="container clear-top">
 			<div class="span12">
 				<div class="span2">
-						<span><a href="#">Contact & support</a></span>
+						<span><a href="/contact">Contact & support</a></span>
 						<span class="pull-right">
 							<a href="#top">Back to Top</a>
 						</span>
