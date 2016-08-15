@@ -78,6 +78,16 @@ function processSignin(){
     $user->save();
 }
 
+function storeContactInfo(){
+    if($_POST) {
+    $contact_submit = new Contact;
+    $contact_submit->name = Input::get('InputName');
+    $contact_submit->email = Input::get('InputEmail');
+    $contact_submit->message = Input::get('InputMessage');
+    $contact_submit->save();    
+    }
+}
+
 //info submitted through Login form
 function loginIfNotEmpty(){
 

@@ -18,6 +18,7 @@
 					<li class="menuItem"><a href="/create">Create</a></li>
 					<li class="menuItem"><a href="/login">Login</a></li>
 					<li class="menuItem"><a href="/signup">Signup</a></li>
+					<li class="menuItem"><a href="/contact">Contact</a></li>
 					<li class="menuItem"><a href="/logout">Logout</a></li>
 				</ul>
 			</div>	   
