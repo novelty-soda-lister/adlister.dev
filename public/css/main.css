@@ -3,14 +3,19 @@
 	opacity: .6;
 	border: 1px solid papayawhip;
 }
+/*.liquid {
+	background-image: url("../img/uploads/tmp/wood.jpg");
+	background-size: 100%, 100%;
+	background-repeat: no-repeat;
+}*/
 body {
 	padding: 100px;
-	color: forestgreen;
-	background-color: ghostwhite;
+	color: black;
 	font-family: 'Indie Flower', cursive;
+	background-color: ghostwhite;
 }
 a {
-	color: forestgreen;
+	color: black;
 }
 .footer {
 	position: relative;
@@ -40,4 +45,11 @@ img {
 	width: 100%;
 	height: 0%;
 	border: 1px solid lightgrey;
+}
+.ketchup {
+	position: absolute;
+	width: 900px;
+	height: 500px;
+	background-image: url("../img/uploads/tmp/soda_bg.png");
+	background-repeat: no-repeat;
 }

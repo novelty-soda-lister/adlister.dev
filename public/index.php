@@ -8,7 +8,7 @@ require_once __DIR__ . '/../bootstrap.php';
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
-<body>
+<body class="liquid">
 	<a id="top"></a>
     <?php require '../views/partials/navbar.php'; ?>
  <div class="bar"></div>
@@ -35,6 +35,7 @@ require_once __DIR__ . '/../bootstrap.php';
 		</div>
 	</div>
     <?php require '../views/partials/common_js.php'; ?>
+
 </body>
 </html>
 

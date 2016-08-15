@@ -21,13 +21,6 @@
             <p class="">Username - <?= $user->username ?></p>
             <p class="">Email - <?= $user->email ?></p>
 
-            <!--Need to see if new user object is Authorized (maybe if using Auth?) end if statement -->
-            <?php if($user->id == Auth::id()) : ?>
-            <div class="col-sm-6 text-center">
-            <a href="views/users/account/edit?id=<?= $user->id; ?>">Edit Profile</a>
-        	</div>
-       	 	<?php endif; ?>
-
 		</div>
 
 	</section>
@@ -41,7 +34,7 @@
 		<div class="row">
 			<!--Foreach through user's items don't forget columns(keys) for sodas -->
 			<?php foreach ($drinks->attributes as $drink) : ?> 
-				<div class="col-md-4">
+				<div class="col-md-4 img-box">
 					<!-- echo Soda name -->
 					<h3 class="text-center post-item"><?= $drink['name']; ?></h3>
 					<!-- echo pric -->
