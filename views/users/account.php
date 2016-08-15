@@ -21,13 +21,6 @@
             <p class="">Username - <?= $user->username ?></p>
             <p class="">Email - <?= $user->email ?></p>
 
-            <!--Need to see if new user object is Authorized (maybe if using Auth?) end if statement -->
-            <?php if($user->id == Auth::id()) : ?>
-            <div class="col-sm-6 text-center">
-            <a href="views/users/account/edit?id=<?= $user->id; ?>">Edit Profile</a>
-        	</div>
-       	 	<?php endif; ?>
-
 		</div>
 
 	</section>
